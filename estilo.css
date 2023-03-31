@@ -84,34 +84,6 @@ header .hd-conteudo{
     font-size: 1.25rem;
 }
 
-.hd-conteudo p{
-    font-size: 1rem;
-    color: #333333;
-    margin: 0;
-    padding: 0.5rem;
-    font-weight: 600;
-}
-
-.hd-conteudo button{
-    background-color: #ffe718;
-    text-align: center;
-    align-items: center;
-    outline: none;
-    border: transparent;
-
-    transition: ease-in-out .5s;
-}
-
-.hd-conteudo button:hover{
-    background-color: #333333;
-    transition: ease-in-out .5s;
-}
-
-.hd-conteudo button:hover p a{
-    color: #ddd;
-    transition: ease-in-out .5s;
-}
-
 header .hd-img{
     display: flex;
     justify-content: center;
@@ -157,6 +129,35 @@ main{
 .reset-link{
     text-decoration: none;
     color: inherit;
+}
+
+.btn-principal{
+    background-color: #ffe718;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: transparent;
+
+    transition: ease-in-out .5s;
+}
+
+.btn-principal > p{
+    font-size: 1rem !important;
+    color: #333333;
+    padding: 0.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.btn-principal:hover{
+    background-color: #333333;
+    transition: ease-in-out .5s;
+}
+
+.btn-principal:hover p a{
+    color: #ddd;
+    transition: ease-in-out .5s;
 }
 
 .div-titulo{
@@ -215,9 +216,9 @@ main{
     margin-bottom: 8px;
 }
 
-.sobre-conteudo p{
+.sobre-conteudo + p{
     font-size: 14px;
-    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .sobre-container-img{
@@ -239,7 +240,6 @@ main{
     transform: scale(1.125);
     transition: ease-in-out .3s;
 }
-
 
 
 
@@ -311,6 +311,10 @@ footer p{
 
     .divider{
         margin-bottom: 1.5rem;
+    }
+
+    .btn-principal > p{
+        font-size: 0.75rem !important;
     }
 
     /* sobre section */
