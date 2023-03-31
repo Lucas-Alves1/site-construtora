@@ -41,11 +41,6 @@ nav p{
     margin: 0;
 }
 
-nav a{
-    text-decoration: none;
-    color: inherit;
-}
-
 nav a:hover,
 nav a:active{
     color: #ffe718;
@@ -55,13 +50,13 @@ nav a:active{
 /* header section */
 
 header{
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 65vh;
     background-image: url(img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    position: relative
+    position: relative;
 }
 
 header .hd-container{
@@ -112,7 +107,7 @@ header .hd-conteudo{
     transition: ease-in-out .5s;
 }
 
-.hd-conteudo button:hover p{
+.hd-conteudo button:hover p a{
     color: #ddd;
     transition: ease-in-out .5s;
 }
@@ -121,7 +116,6 @@ header .hd-img{
     display: flex;
     justify-content: center;
     align-items: end;
-    padding-right: 4rem;
     margin: 0;
     transform: translateY(2.75em);
 }
@@ -134,7 +128,7 @@ header .hd-img img{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    min-width: 100%;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
@@ -155,19 +149,25 @@ header .hd-img img{
 }
 
 main{
-    padding: 0 4rem;
+    padding: 0 3rem;
+}
+
+/* utility classes */
+
+.reset-link{
+    text-decoration: none;
+    color: inherit;
 }
 
 .div-titulo{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    text-align: center;
 }
 
 .div-titulo h2{
     color: #333333;
-    font-size: clamp(1.5rem, calc(20vw + 10%), 2rem);
+    font-size: clamp(1rem, calc(20vw + 10%), 1.5rem);
     font-weight: bold;
     cursor: default;
 }
@@ -176,11 +176,8 @@ main{
     background: #333333;
     height: 4px;
     border-radius: 4px;
-    width: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    width: 12%;
+    margin-bottom: 1rem;
 }
 
 .simbolo{
@@ -196,15 +193,84 @@ main{
 
 /* sobre section */
 
+#sobre{
+    margin-top: 1rem;
 
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.sobre-container-txt{
+    padding: 1rem 0;
+}
+
+.sobre-conteudo span{
+    font-weight: bold;
+    background-color: #ffe718;
+}
+
+.sobre-conteudo h3{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.sobre-conteudo p{
+    font-size: 14px;
+    margin: 0;
+}
+
+.sobre-container-img{
+    padding: 1rem;
+    margin: 0 auto;
+
+}
+
+.sobre-container-img .div-img{
+    overflow: hidden;
+}
+
+.sobre-container-img img{
+    max-width: 100%;
+    transition: .3s ease-in-out;
+}
+
+.sobre-container-img img:hover{
+    transform: scale(1.125);
+    transition: ease-in-out .3s;
+}
+
+
+
+
+/* footer section */
+
+footer{
+    background-color: #333333;
+    text-align: center;
+    align-items: center;
+    position: sticky;
+    overflow: hidden;
+}
+
+footer p{
+    font-size: 1rem;
+    padding: 1.5rem 0;
+    color: #ddd;
+    margin: 0;
+}
 
 
 /* aqui faço para telas pequenas */
 
 @media only screen and (max-width: 55rem) { 
+    /* nav section */
+
     nav .nav-p-container{
         gap: 0.75em
     }
+
+    /* header section */
 
     header .hd-container{
         display: block;
@@ -237,7 +303,34 @@ main{
         padding: 0.5rem;
     }
 
+    /* main section */
+
     main{
         padding: 0 1.5rem;
+    }
+
+    .divider{
+        margin-bottom: 1.5rem;
+    }
+
+    /* sobre section */
+
+    #sobre{
+        display: block;
+    }
+
+    .sobre-container-img{
+        padding: 0;
+    }
+
+    .sobre-conteudo h3{
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .sobre-conteudo p{
+        font-size: 12px;
+        font-weight: 600;
     }
 }

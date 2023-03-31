@@ -17,9 +17,9 @@
 <body>
     <nav>
         <div class="nav-p-container">
-            <p><a href="#">Início</a></p>
-            <p><a href="#sobre">Sobre</a></p>
-            <p><a href="#servicos">Serviços</a></p>
+            <p><a href="#" class="reset-link">Início</a></p>
+            <p><a href="#sobre" class="reset-link">Sobre</a></p>
+            <p><a href="#servicos" class="reset-link">Serviços</a></p>
         </div>
 
         <div class="nav-btn-container">
@@ -32,7 +32,11 @@
             <div class="hd-conteudo">
                 <h3>Alta qualidade garantida!</h3>
                 <h1>Construção é nossa especialidade 🤩</h1>
-                <button><p>NOSSOS SERVIÇOS</p></button>
+                <button type="button">
+                    <p>
+                        <a href="#sobre" class="reset-link">CONHEÇA-NOS JÁ</a>
+                    </p>
+                </button>
             </div>
 
             <div class="hd-img">
@@ -49,12 +53,26 @@
 
     <main>
         <section id="sobre">
-            <div class="div-titulo">
-                <h2>Sobre Nós</h2>
+            <div class="sobre-container-txt">
+                <div class="div-titulo">
+                    <h2>SOBRE NÓS</h2>
+                </div>
+                <div class="divider">
+                    <div class="simbolo"></div>
+                </div>
+
+                <div class="sobre-conteudo">
+                    <h3>Expressiva rede de contatos e reconhecimento</h3>
+                    <p>
+                        A <span>Construtora</span> é representada por <span>múltiplas filiais</span> ao redor de todo o mundo. Nós implementamos diferentes projetos, <span>tecnologias inovadoras</span> e tratamos cada cliente como único!
+                    </p>
+                </div>
             </div>
 
-            <div class="divider">
-                <div class="simbolo"></div>
+            <div class="sobre-container-img">
+                <div class="div-img">
+                    <img src="img/sobre.jpg" alt="homens trabalhando em uma construção">
+                </div>
             </div>
         </section>
 
@@ -62,6 +80,10 @@
             <h2>Serviços</h2>
         </section>
     </main>
+
+    <footer>
+        <p>© Lucas Alves Lago - 2023</p>
+    </footer>
 
 
 
