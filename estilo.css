@@ -124,6 +124,10 @@ main{
     padding: 0 3rem;
 }
 
+main #servicos{
+    background-color: #e7e7e7;
+}
+
 /* utility classes */
 
 .reset-link{
@@ -177,7 +181,7 @@ main{
     background: #333333;
     height: 4px;
     border-radius: 4px;
-    width: 12%;
+    width: calc(100vw - 90vw);
     margin-bottom: 1rem;
 }
 
@@ -234,6 +238,7 @@ main{
 .sobre-container-img img{
     max-width: 100%;
     transition: .3s ease-in-out;
+    border-radius: 4px;
 }
 
 .sobre-container-img img:hover{
@@ -241,6 +246,33 @@ main{
     transition: ease-in-out .3s;
 }
 
+/* servicos section  */
+
+#servicos{
+    margin: 2rem 0;
+    background: #e7e7e7;
+    border-radius: 4px;
+    padding-top: 2rem;
+}
+
+#servicos .div-titulo,
+#servicos .divider{
+    margin-left: 2.5rem;
+}
+
+.servicos-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+    place-items: center;
+
+    row-gap: 1.5rem;
+    padding: 1.5rem 2.5rem;
+}
+
+.servicos-container .card{
+    max-width: clamp(12rem, calc(25vw + 2rem), 17rem) !important;
+}
 
 
 /* footer section */
@@ -336,5 +368,55 @@ footer p{
     .sobre-conteudo p{
         font-size: 12px;
         font-weight: 600;
+    }
+
+    /* servicos section */
+    /* footer section */
+
+    footer p{
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 995px) {
+    .servicos-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3;
+    
+        row-gap: 1rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+    .servicos-container .card{
+        max-width: clamp(10rem, calc(25vw + 5rem), 15rem) !important;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .servicos-container{
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .servicos-container > .card:not(:nth-child(6)){
+        margin-bottom: 0.5rem;
+    }
+
+    .servicos-container .card{
+        max-width: 100% !important;
+    }
+
+    #servicos .div-titulo,
+    #servicos .divider{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
     }
 }
