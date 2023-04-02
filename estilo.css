@@ -7,10 +7,32 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+/* scrollbar config */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+background: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #ffe718;
+border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #b6a50c;
+}
+
 /* nav section */
 
 nav{
-    background-color: #333333;
+    background: 
+        linear-gradient(to bottom right, #333333, #3f3f3f);
     color: #ddd;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -27,16 +49,30 @@ nav .nav-btn-container{
     display: flex;
     align-items: center;
     justify-content: end;
+    border-radius: 50%;
 }
 
 nav .nav-btn-container button{
     background: #ffe718;
     height: 2rem;
     width: 2rem;
+    border: transparent;
+    border-radius: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-nav p{
+nav .nav-btn-container button > p{
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav .nav-p-container p{
     padding: 1.2rem 0;
     margin: 0;
 }
@@ -76,7 +112,7 @@ header .hd-conteudo{
     color: #ddd;
     font-weight: 600;
     font-size: clamp(2rem, 2.75rem, 3.75rem);
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 2.5rem 0;
 }
 
 .hd-conteudo h3{
@@ -135,6 +171,11 @@ main #servicos{
     color: inherit;
 }
 
+span{
+    font-weight: bold;
+    background-color: #ffe718;
+}
+
 .btn-principal{
     background-color: #ffe718;
     text-align: center;
@@ -159,7 +200,7 @@ main #servicos{
     transition: ease-in-out .5s;
 }
 
-.btn-principal:hover p a{
+.btn-principal:hover > p > a{
     color: #ddd;
     transition: ease-in-out .5s;
 }
@@ -196,6 +237,34 @@ main #servicos{
     transform: translateY(-25%);
 }
 
+.hovertext {
+    position: relative;
+}
+
+.hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    background-color: #fff;
+    color: #333333;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5rem;
+    transition: opacity .5s ease-in-out;
+  
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 120%;
+}
+
+.hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* sobre section */
 
 #sobre{
@@ -209,15 +278,10 @@ main #servicos{
     padding: 1rem 0;
 }
 
-.sobre-conteudo span{
-    font-weight: bold;
-    background-color: #ffe718;
-}
-
 .sobre-conteudo h3{
     font-weight: 600;
     font-size: 1.5rem;
-    margin-bottom: 8px;
+    margin-bottom: 1rem;
 }
 
 .sobre-conteudo + p{
@@ -233,6 +297,7 @@ main #servicos{
 
 .sobre-container-img .div-img{
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .sobre-container-img img{
@@ -250,7 +315,8 @@ main #servicos{
 
 #servicos{
     margin: 2rem 0;
-    background: #e7e7e7;
+    background: 
+        linear-gradient(to right, #dddddd, #e7e7e7);
     border-radius: 4px;
     padding-top: 2rem;
 }
@@ -258,6 +324,15 @@ main #servicos{
 #servicos .div-titulo,
 #servicos .divider{
     margin-left: 2.5rem;
+}
+
+.servicos-descricao{
+    margin: 0 2.5rem;
+    text-align: center;
+}
+
+.servicos-descricao > p{
+    font-size: 1rem;
 }
 
 .servicos-container{
@@ -271,14 +346,30 @@ main #servicos{
 }
 
 .servicos-container .card{
-    max-width: clamp(12rem, calc(25vw + 2rem), 17rem) !important;
+    max-width: 
+        clamp(12rem, calc(25vw + 2rem), 17rem) !important;
+    overflow: hidden;
 }
 
+.servicos-container .card > img{
+    transition: saturate .3s ease-in-out;
+}
+
+.servicos-container .card:hover img{
+    filter: saturate(1.3);
+    transition: ease-in-out .3s;
+}
+
+.card-title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
 
 /* footer section */
 
 footer{
-    background-color: #333333;
+    background: 
+        linear-gradient(to top right, #333333, #3f3f3f);
     text-align: center;
     align-items: center;
     position: sticky;
@@ -298,8 +389,16 @@ footer p{
 @media only screen and (max-width: 55rem) { 
     /* nav section */
 
+    nav{
+        padding: 0 1.5rem;
+    }
+
     nav .nav-p-container{
         gap: 0.75em
+    }
+
+    .hovertext:before {
+        left: -10;
     }
 
     /* header section */
@@ -323,6 +422,8 @@ footer p{
 
     .hd-conteudo h1{
         font-size: clamp(1.5rem, 2rem, 2.2rem);
+        padding: 0.5rem 0;
+
     }
     
     .hd-conteudo h3{
@@ -371,6 +472,23 @@ footer p{
     }
 
     /* servicos section */
+
+    #servicos{
+        margin-top: 2.75rem;
+        background: 
+            linear-gradient(to bottom, #d8d8d8, #e7e7e7);
+    }
+
+    .servicos-descricao{
+        margin: 0 1.5rem;
+        text-align: center;
+    }
+    
+    .servicos-descricao > p{
+        font-size: 12px;
+        font-weight: bold;
+    }
+
     /* footer section */
 
     footer p{
