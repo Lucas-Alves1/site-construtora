@@ -1,0 +1,70 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcf7cb;
+}
+
+/* nav section */
+
+nav{
+    background: 
+        linear-gradient(to bottom right, #333333, #3f3f3f);
+    color: #ddd;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10vw;
+}
+
+nav .nav-p-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1em
+}
+
+nav .nav-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-radius: 50%;
+}
+
+nav .nav-btn-container button{
+    background: #ffe718;
+    height: 2rem;
+    width: 2rem;
+    border: transparent;
+    border-radius: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .nav-btn-container button > p{
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav .nav-p-container p{
+    padding: 1.2rem 0;
+    margin: 0;
+}
+
+nav a:hover,
+nav a:active{
+    color: #ffe718;
+    transform: scale(1.1);
+}
+
+/* utility classes */
+
+.reset-link{
+    text-decoration: none;
+    color: inherit;
+}

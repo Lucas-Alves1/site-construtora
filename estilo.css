@@ -75,12 +75,18 @@ nav .nav-btn-container button > p{
 nav .nav-p-container p{
     padding: 1.2rem 0;
     margin: 0;
+
+    transition: all .5s ease-in-out;
+}
+
+nav .nav-p-container p:hover{
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
 }
 
 nav a:hover,
 nav a:active{
     color: #ffe718;
-    transform: scale(1.1);
 }
 
 /* header section */
@@ -315,8 +321,7 @@ span{
 
 #servicos{
     margin: 2rem 0;
-    background: 
-        linear-gradient(to right, #dddddd, #e7e7e7);
+    background: #fcf7b9 !important;
     border-radius: 4px;
     padding-top: 2rem;
 }
@@ -361,8 +366,12 @@ span{
 }
 
 .card-title{
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
+}
+
+.card-text{
+    font-size: 0.85rem;
 }
 
 /* footer section */
@@ -383,8 +392,32 @@ footer p{
     margin: 0;
 }
 
+/* carrinho section */
 
-/* aqui faço para telas pequenas */
+.div-carrinho {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+    
+    background: #ffe718;
+    border: 2px #333 solid;
+}
+  
+.div-carrinho svg{
+    height: 25px;
+    fill: #333;
+}
+
+
+
+/* telas pequenas ------------------------ */
 
 @media only screen and (max-width: 55rem) { 
     /* nav section */
@@ -475,8 +508,6 @@ footer p{
 
     #servicos{
         margin-top: 2.75rem;
-        background: 
-            linear-gradient(to bottom, #d8d8d8, #e7e7e7);
     }
 
     .servicos-descricao{
