@@ -59,10 +59,8 @@ nav .nav-btn-container button{
     border: transparent;
     border-radius: inherit;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: grid;
+    place-items: center;
 }
 
 nav .nav-btn-container button > p{
@@ -206,6 +204,7 @@ span{
     transition: ease-in-out .5s;
 }
 
+.btn-principal:hover > p,
 .btn-principal:hover > p > a{
     color: #ddd;
     transition: ease-in-out .5s;
@@ -338,6 +337,7 @@ span{
 
 .servicos-descricao > p{
     font-size: 1rem;
+    color: #333;
 }
 
 .servicos-container{
@@ -372,6 +372,22 @@ span{
 
 .card-text{
     font-size: 0.85rem;
+}
+.div-label{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.div-label label{
+    font-size: .75rem;
+}
+
+.card-body .btn-card-container{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }
 
 /* footer section */
@@ -540,6 +556,10 @@ footer p{
 
     .servicos-container .card{
         max-width: clamp(10rem, calc(25vw + 5rem), 15rem) !important;
+    }
+
+    .btn-principal > p{
+        font-size: 0.75rem !important;
     }
 }
 

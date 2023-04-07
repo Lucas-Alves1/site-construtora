@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/header.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +95,7 @@
 
             <div class="servicos-descricao">
                 <p>
-                    Oferecemos produtos, ferramentas e materiais de construção da mais <span>alta qualidade.</span> Adicione já no seu carrinho! Fazemos <span>entrega</span> por todo o território nacional.
+                    Oferecemos produtos, ferramentas e materiais de construção da mais alta qualidade. Adicione já no seu carrinho! Fazemos entrega por todo o território nacional.
                 </p>
             </div>
 
@@ -102,54 +103,165 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/areia.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Areia p/ construção</h5>
-                      <p class="card-text"><span>$120,00/M³</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="areia">Areia p/ construção</h5>
+                        <p class="card-text" id="preco-a"><span>R$120,00/M³</span></p>
+
+                        <div class="div-label">
+                            <label for="qtdeAreia">Qtde:</label>
+                            <input 
+                                id="qtdeAreia"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                        </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="addAreia()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
+                      
                     </div>
                 </div>
 
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/pedra.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Pedra p/ construção</h5>
-                      <p class="card-text"><span>$96,00/M³</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="pedra">Pedra p/ construção</h5>
+                        <p class="card-text" id="preco-p"><span>R$96,00/M³</span></p>
+
+                        <div class="div-label">
+                            <label for="qtdePedra">Qtde:</label>
+                            <input 
+                                id="qtdePedra"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                        </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="adicionarAoCarrinho()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/gesso.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Gesso p/ parede</h5>
-                      <p class="card-text"><span>$90,00/M³</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="gesso">Gesso p/ parede</h5>
+                        <p class="card-text"><span>R$90,00/M³</span></p>
+
+
+                        <div class="div-label">
+                            <label for="qtdeGesso">Qtde:</label>
+                            <input 
+                                id="qtdeGesso"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                        </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="adicionarAoCarrinho()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/drywall.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Drywall</h5>
-                      <p class="card-text"><span>$30,00/M²</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="drywall">Drywall</h5>
+                        <p class="card-text"><span>R$30,00/M²</span></p>
+                        
+                        <div class="div-label">
+                            <label for="qtdeDrywall">Qtde:</label>
+                            <input 
+                                id="qtdeDrywall"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                        </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="adicionarAoCarrinho()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/vidro.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Vidro 4mm</h5>
-                      <p class="card-text"><span>R$350,00/M²</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="vidro">Vidro 4mm</h5>
+                        <p class="card-text"><span>R$350,00/M²</span></p>
+
+                        <div class="div-label">
+                            <label for="qtdeVidro">Qtde:</label>
+                            <input 
+                                id="qtdeVidro"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                        </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="adicionarAoCarrinho()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card" style="width: 18rem;">
                     <img src="img/servicos/cimento.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Cimento 25kg</h5>
-                      <p class="card-text"><span>R$27,90</span></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title" id="cimento">Cimento 25kg</h5>
+                        <p class="card-text"><span>R$57,90</span></p>
+
+
+                        <div class="div-label">
+                            <label for="qtdeCimento">Qtde:</label>
+                            <input 
+                                id="qtdeCimento"
+                                type="number"
+                                min="1"
+                                placeholder="Ex: 3" aria-label="quantidade de itens"
+                                class="form-control form-control-sm input-value"
+                            >   
+                            </div>
+
+                        <div class="btn-card-container">
+                            <button type="button" class="btn-principal" onclick="adicionarAoCarrinho()">
+                                <p>
+                                    Adicionar ao carrinho
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,6 +289,6 @@
 
 
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
