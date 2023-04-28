@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
 }
 
 body{
@@ -32,17 +33,39 @@ background: #b6a50c;
 
 nav{
     background: 
-        linear-gradient(to bottom right, #333333, #3f3f3f);
+        /* linear-gradient(to bottom right, #333333, #3f3f3f), */
+        rgba(0, 0, 0, 0.7);
     color: #ddd;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 10vw;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
 }
 
 nav .nav-p-container{
     display: flex;
     flex-direction: row;
     gap: 1em
+}
+
+nav .nav-p-container p{
+    padding: 1.2rem 0;
+    margin: 0;
+
+    transition: all .5s ease-in-out;
+}
+
+nav .nav-p-container p:hover{
+    transform: scale(1.075);
+    transition: all .5s ease-in-out;
+}
+
+nav a:hover,
+nav a:active{
+    color: #ffe718;
 }
 
 nav .nav-btn-container{
@@ -58,40 +81,25 @@ nav .nav-btn-container button{
     width: 2rem;
     border: transparent;
     border-radius: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0;
 
     display: grid;
     place-items: center;
 }
 
-nav .nav-btn-container button > p{
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
+nav .nav-btn-container button::after{
+    content: "6";
 }
 
-nav .nav-p-container p{
-    padding: 1.2rem 0;
-    margin: 0;
-
-    transition: all .5s ease-in-out;
-}
-
-nav .nav-p-container p:hover{
-    transform: scale(1.1);
-    transition: all .5s ease-in-out;
-}
-
-nav a:hover,
-nav a:active{
-    color: #ffe718;
-}
 
 /* header section */
 
 header{
     min-width: 100%;
-    min-height: 65vh;
+    min-height: 70vh;
     background-image: url(img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -104,6 +112,7 @@ header .hd-container{
     grid-template-columns: repeat(3, 1fr);
     height: 100%;
     margin: 0;
+    padding-top: 2.5rem;
 }
 
 header .hd-conteudo{
@@ -285,7 +294,7 @@ span{
 
 .sobre-conteudo h3{
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
 }
 
@@ -373,6 +382,7 @@ span{
 .card-text{
     font-size: 0.85rem;
 }
+
 .div-label{
     display: flex;
     gap: 4px;
@@ -406,6 +416,8 @@ footer p{
     padding: 1.5rem 0;
     color: #ddd;
     margin: 0;
+    text-decoration: underline;
+    text-decoration-color: #ffe718;
 }
 
 /* carrinho section */
@@ -433,7 +445,7 @@ footer p{
 
 
 
-/* telas pequenas ------------------------ */
+/* responsividade ------------------------ */
 
 @media only screen and (max-width: 55rem) { 
     /* nav section */
@@ -446,6 +458,10 @@ footer p{
         gap: 0.75em
     }
 
+    nav .nav-p-container p{
+        font-size: 0.75rem;
+    }
+
     .hovertext:before {
         left: -10;
     }
@@ -454,6 +470,7 @@ footer p{
 
     header .hd-container{
         display: block;
+        padding-top: 3rem;
     }
 
     header .hd-conteudo{
@@ -511,8 +528,8 @@ footer p{
 
     .sobre-conteudo h3{
         font-weight: 600;
-        font-size: 1.25rem;
-        margin-bottom: 12px;
+        font-size: 1rem;
+        margin-bottom: .5rem;
     }
 
     .sobre-conteudo p{

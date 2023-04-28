@@ -45,36 +45,26 @@ var produtos = [
     areia, pedra, gesso, drywall, vidro, cimento
 ]
 
-
-
 var carrinho = []
 
-function addAreia(){
-    let qtde_A = document.querySelector('#qtdeAreia');
+// window.onload = () => {
+//     function addAreia(){
+//         // let texto = document.querySelector("#txt")
+    
+//         // texto.innerHTML = "Adicionado com sucesso!"
+    
+//         return console.log("teste")
+//     }
+// }
 
-    qtde_A.addEventListener('input', function(){
-        let valor = parseInt(qtde_A.value)
 
-        let total = valor * areia.preco
-
-        return carrinho.push(total)
-    })
-
-    console.log(carrinho[carrinho.length - 1])
-}
 
 function addPedra(){
-    let qtde_P = document.querySelector('#qtdePedra');
+    let total = qtde_P.value * pedra.preco
 
-    qtde_P.addEventListener('input', function(){
-        let valor = parseInt(qtde_P.value)
+    carrinho.push(total)
 
-        let total = valor * areia.preco
-
-        return carrinho.push(total)
-    })
-
-    console.log(carrinho[carrinho.length - 1])
+    return console.log(carrinho[carrinho.length - 1])
 }
 
 function getPValue() {
@@ -126,3 +116,11 @@ function getCValue() {
         return valor_C
     })
 }
+
+// function mostraQtdeCarrinho(){
+//     let valor_carrinho = document.getElementById('#valor-carrinho');
+//     valor_carrinho.innerHTML = "<p>" + carrinho.length + "</p>"
+
+// }
+
+// mostraQtdeCarrinho()

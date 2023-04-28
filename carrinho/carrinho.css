@@ -7,18 +7,43 @@ body{
     font-family: 'Poppins', sans-serif
 }
 
+/* scrollbar config */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+background: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #ffe718;
+border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #b6a50c;
+}
+
 /* nav section */
 
 nav{
     background: 
-        linear-gradient(to bottom right, #333333, #3f3f3f);
+        rgba(0, 0, 0, 0.7);
     color: #ddd;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 10vw;
+    z-index: 10000;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
 }
 
-nav .nav-p-container > div{
+nav .nav-p-container > div,
+nav .nav-p-container > div > a {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -74,6 +99,12 @@ main{
     padding: 1rem;
 
     color: #333333;
+    align-items: center;
+}
+
+.card{
+    width: min(calc(100% - 1rem), 22rem);
+    margin-inline: auto;
 }
 
 .card-title{
@@ -199,3 +230,28 @@ main{
     color: #ddd;
     transition: ease-in-out .5s;
 }
+
+/* produtos section */
+
+.div-label{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.div-label label{
+    font-size: .75rem;
+}
+
+/* responsividade */
+
+@media only screen and (max-width: 375px) {
+    .div-titulo{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div-titulo svg{
+        margin-bottom: .5rem;
+    }
+} 
