@@ -138,7 +138,7 @@ header .hd-img{
     justify-content: center;
     align-items: end;
     margin: 0;
-    transform: translateY(2.75em);
+    transform: translateY(4.25rem);
 }
 
 header .hd-img img{
@@ -173,10 +173,6 @@ main{
     padding: 0 3rem;
 }
 
-main #servicos{
-    background-color: #e7e7e7;
-}
-
 /* utility classes */
 
 .reset-link{
@@ -196,6 +192,7 @@ span{
     justify-content: center;
     outline: none;
     border: transparent;
+    border-radius: 2px;
 
     transition: ease-in-out .5s;
 }
@@ -267,6 +264,10 @@ span{
     border-radius: 5px;
     padding: 0.5rem;
     transition: opacity .5s ease-in-out;
+
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
+    box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
   
     position: absolute;
     z-index: 1;
@@ -279,6 +280,12 @@ span{
     visibility: visible;
 }
 
+hr{
+    margin: 0 auto;
+    color: #333333;
+    max-width: 90vw;
+}
+
 /* sobre section */
 
 #sobre{
@@ -286,6 +293,7 @@ span{
 
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    gap: 1rem;
 }
 
 .sobre-container-txt{
@@ -312,6 +320,9 @@ span{
 .sobre-container-img .div-img{
     overflow: hidden;
     border-radius: 4px;
+    clip-path: 
+        polygon(50% 0, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+
 }
 
 .sobre-container-img img{
@@ -321,7 +332,7 @@ span{
 }
 
 .sobre-container-img img:hover{
-    transform: scale(1.125);
+    transform: scale(1.075);
     transition: ease-in-out .3s;
 }
 
@@ -329,7 +340,7 @@ span{
 
 #servicos{
     margin: 2rem 0;
-    background: #fcf7b9 !important;
+    background: #fcf7b9;
     border-radius: 4px;
     padding-top: 2rem;
 }
@@ -403,21 +414,20 @@ span{
 /* footer section */
 
 footer{
-    background: 
-        linear-gradient(to top right, #333333, #3f3f3f);
     text-align: center;
     align-items: center;
-    position: sticky;
-    overflow: hidden;
 }
 
 footer p{
     font-size: 1rem;
     padding: 1.5rem 0;
-    color: #ddd;
+    color: inherit;
+    font-weight: bold;
     margin: 0;
-    text-decoration: underline;
-    text-decoration-color: #ffe718;
+}
+
+footer p:hover{
+    color: #b6a50c;
 }
 
 /* carrinho section */
@@ -430,12 +440,24 @@ footer p{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    background: #fff;
+    border: 1px #333 solid;
+    transition:  ease-in .2s;
+    opacity: .7;
 
     display: grid;
     place-items: center;
     
-    background: #ffe718;
-    border: 2px #333 solid;
+
+    box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.37);
+}
+
+.div-carrinho:hover{
+    transition: ease-in .2s;
+    transform: scale(1.1);
+    opacity: 1;
 }
   
 .div-carrinho svg{
@@ -481,7 +503,6 @@ footer p{
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-right: 1.5rem;
         padding-bottom: 1rem;
         transform: translateY(0);
     }
