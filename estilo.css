@@ -90,10 +90,9 @@ nav .nav-btn-container button{
     place-items: center;
 }
 
-nav .nav-btn-container button::after{
-    content: "6";
+nav .nav-btn-container button > p{
+    margin: 0;
 }
-
 
 /* header section */
 
@@ -434,8 +433,8 @@ footer p:hover{
 
 .div-carrinho {
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+    right: 20px;
+    bottom: 20px;
     z-index: 1000;
     width: 60px;
     height: 60px;
@@ -443,7 +442,6 @@ footer p:hover{
     background: #fff;
     border: 1px #333 solid;
     transition:  ease-in .2s;
-    opacity: .7;
 
     display: grid;
     place-items: center;
@@ -457,13 +455,14 @@ footer p:hover{
 .div-carrinho:hover{
     transition: ease-in .2s;
     transform: scale(1.1);
-    opacity: 1;
 }
   
 .div-carrinho svg{
     height: 25px;
     fill: #333;
 }
+
+
 
 
 
@@ -579,6 +578,13 @@ footer p:hover{
     footer p{
         font-size: 0.75rem;
         padding: 1rem;
+    }
+
+    /* carrinho section */
+
+    .div-carrinho{
+        right: 15px;
+        bottom: 15px;
     }
 }
 
