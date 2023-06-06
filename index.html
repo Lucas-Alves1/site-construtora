@@ -116,8 +116,7 @@
                             </button>
                         </div>
 
-                        <div id="txt"></div>
-                      
+                        <div class="txt-retorno" id="txt-retorno-a"></div>
                     </div>
                 </div>
 
@@ -134,6 +133,8 @@
                                 </p>
                             </button>
                         </div>
+
+                        <div class="txt-retorno" id="txt-retorno-p"></div>
                     </div>
                 </div>
 
@@ -150,6 +151,8 @@
                                 </p>
                             </button>
                         </div>
+
+                        <div class="txt-retorno" id="txt-retorno-g"></div>
                     </div>
                 </div>
 
@@ -166,6 +169,8 @@
                                 </p>
                             </button>
                         </div>
+
+                        <div class="txt-retorno" id="txt-retorno-d"></div>
                     </div>
                 </div>
 
@@ -182,6 +187,8 @@
                                 </p>
                             </button>
                         </div>
+
+                        <div class="txt-retorno" id="txt-retorno-v"></div>
                     </div>
                 </div>
 
@@ -198,6 +205,8 @@
                                 </p>
                             </button>
                         </div>
+
+                        <div class="txt-retorno" id="txt-retorno-c"></div>
                     </div>
                 </div>
             </div>
@@ -213,7 +222,7 @@
     </footer>
 
     <!-- Button trigger modal -->
-    <button type="button" class="div-carrinho" title="ir para o carrinho" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="div-carrinho" title="ir para o carrinho" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="itensCarrinho()">
         <div>
             <!-- icone -->
             <svg 
@@ -235,7 +244,7 @@
         aria-labelledby="exampleModalLabel" 
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="div-titulo">
@@ -248,20 +257,29 @@
                             <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                         </svg>
     
-                        <h2>MEU CARRINHO</h2>
+                        <h3>MEU CARRINHO</h3>
                     </div>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
-                ...
+                    <div id="itens"></div>
+
+                    <!-- <div class="div-label">
+                        <label for="qtdeAreia">Qtde:</label>
+                        <input 
+                            id="qtdeAreia"
+                            type="number"
+                            min="1"
+                            placeholder="Ex: 3" aria-label="quantidade de itens"
+                            class="form-control form-control-sm input-value"
+                        >
+                    </div> -->
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn-principal"><p>Finalizar compra</p></button>
                 </div>
             </div>
         </div>

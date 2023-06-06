@@ -95,7 +95,18 @@ function addAreia(){
     if(!carrinho.includes(areia)){
         carrinho.push(areia);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-a");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -103,7 +114,18 @@ function addPedra(){
     if(!carrinho.includes(pedra)){
         carrinho.push(pedra);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-p");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -111,7 +133,18 @@ function addGesso(){
     if(!carrinho.includes(gesso)){
         carrinho.push(gesso);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-g");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -119,7 +152,18 @@ function addDrywall(){
     if(!carrinho.includes(drywall)){
         carrinho.push(drywall);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-d");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -127,7 +171,18 @@ function addVidro(){
     if(!carrinho.includes(vidro)){
         carrinho.push(vidro);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-v");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -135,7 +190,18 @@ function addCimento(){
     if(!carrinho.includes(cimento)){
         carrinho.push(cimento);
     } else{
-        alert("Produto já adicionado")
+        let txt_retorno = document.querySelector("#txt-retorno-c");
+        txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
+        
+        do{
+            var c = 0
+
+            setTimeout( () => {
+                return txt_retorno.innerHTML = "";
+            }, 2500);
+
+            c++;
+        } while(c == 0)
     }
 }
 
@@ -146,6 +212,33 @@ function mostraQtdeCarrinho(){
         valor_carrinho.innerHTML = "<p>0</p>"
     } else {
         valor_carrinho.innerHTML = "<p>" + carrinho.length + "</p>"
+    }
+}
+
+function itensCarrinho(){
+    let itens = document.querySelector("#itens")
+    itens.innerHTML = ""
+
+    if(carrinho.length != 0){
+        for (let i = 0; i < carrinho.length; i++) {
+            var produto = carrinho[i];
+            var imagem = document.createElement("img");
+            var txt_produto = document.createElement("p");
+            var div_conteudo = document.createElement("div");
+            var hr = document.createElement("hr");
+            
+            div_conteudo.classList.add("item-container")
+            txt_produto.textContent = produto.nome + " - R$" + produto.preco.toFixed(2);
+            imagem.setAttribute("src", `${"../" + produto.img}`);
+            imagem.setAttribute("alt", "Falha ao carregar a imagem");
+
+            itens.appendChild(div_conteudo);
+            itens.appendChild(hr);
+            div_conteudo.appendChild(imagem);
+            div_conteudo.appendChild(txt_produto);
+        }
+    } else{
+        itens.innerHTML = "<p style='text-align: center; margin: 0'>Seu carrinho está vazio! 😭</p>"
     }
 }
 
