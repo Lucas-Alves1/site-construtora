@@ -47,42 +47,42 @@ infoCardDrywall()
 infoCardVidro()
 infoCardCimento()
 
-function infoCardAreia(){
+function infoCardAreia() {
     areia.id.innerHTML = areia.nome;
     var preco_areia = document.querySelector("#preco-a")
     preco_areia.innerHTML = "<span>R$" + areia.preco.toFixed(2) + "/M³</span>"
     document.querySelector("#img-a").src = areia.img
 }
 
-function infoCardPedra(){
+function infoCardPedra() {
     pedra.id.innerHTML = pedra.nome;
     var preco_pedra = document.querySelector("#preco-p")
     preco_pedra.innerHTML = "<span>R$" + pedra.preco.toFixed(2) + "/M³</span>"
     document.querySelector("#img-p").src = pedra.img
 }
 
-function infoCardGesso(){
+function infoCardGesso() {
     gesso.id.innerHTML = gesso.nome;
     var preco_gesso = document.querySelector("#preco-g")
     preco_gesso.innerHTML = "<span>R$" + gesso.preco.toFixed(2) + "/M³</span>"
     document.querySelector("#img-g").src = gesso.img
 }
 
-function infoCardDrywall(){
+function infoCardDrywall() {
     drywall.id.innerHTML = drywall.nome;
     var preco_drywall = document.querySelector("#preco-d")
     preco_drywall.innerHTML = "<span>R$" + drywall.preco.toFixed(2) + "/M³</span>"
     document.querySelector("#img-d").src = drywall.img
 }
 
-function infoCardVidro(){
+function infoCardVidro() {
     vidro.id.innerHTML = vidro.nome;
     var preco_vidro = document.querySelector("#preco-v")
     preco_vidro.innerHTML = "<span>R$" + vidro.preco.toFixed(2) + "/M³</span>"
     document.querySelector("#img-v").src = vidro.img
 }
 
-function infoCardCimento(){
+function infoCardCimento() {
     cimento.id.innerHTML = cimento.nome;
     var preco_cimento = document.querySelector("#preco-c")
     preco_cimento.innerHTML = "<span>R$" + cimento.preco.toFixed(2) + "/M³</span>"
@@ -91,194 +91,216 @@ function infoCardCimento(){
 
 const carrinho = []
 
-function addAreia(){
-    if(!carrinho.includes(areia)){
+function addAreia() {
+    if (!carrinho.includes(areia)) {
         carrinho.push(areia);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-a");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function addPedra(){
-    if(!carrinho.includes(pedra)){
+function addPedra() {
+    if (!carrinho.includes(pedra)) {
         carrinho.push(pedra);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-p");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function addGesso(){
-    if(!carrinho.includes(gesso)){
+function addGesso() {
+    if (!carrinho.includes(gesso)) {
         carrinho.push(gesso);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-g");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function addDrywall(){
-    if(!carrinho.includes(drywall)){
+function addDrywall() {
+    if (!carrinho.includes(drywall)) {
         carrinho.push(drywall);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-d");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function addVidro(){
-    if(!carrinho.includes(vidro)){
+function addVidro() {
+    if (!carrinho.includes(vidro)) {
         carrinho.push(vidro);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-v");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function addCimento(){
-    if(!carrinho.includes(cimento)){
+function addCimento() {
+    if (!carrinho.includes(cimento)) {
         carrinho.push(cimento);
-    } else{
+    } else {
         let txt_retorno = document.querySelector("#txt-retorno-c");
         txt_retorno.innerHTML = "<p>Produto já adicionado!</p>";
-        
-        do{
+
+        do {
             var c = 0
 
-            setTimeout( () => {
+            setTimeout(() => {
                 return txt_retorno.innerHTML = "";
             }, 2500);
 
             c++;
-        } while(c == 0)
+        } while (c == 0)
     }
 }
 
-function mostraQtdeCarrinho(){
+function mostraQtdeCarrinho() {
     let valor_carrinho = document.querySelector('#valor-carrinho');
 
-    if(carrinho.length === 0 || carrinho.length === undefined){
+    if (carrinho.length === 0 || carrinho.length === undefined) {
         valor_carrinho.innerHTML = "<p>0</p>"
     } else {
         valor_carrinho.innerHTML = "<p>" + carrinho.length + "</p>"
     }
 }
 
-function itensCarrinho(){
-    let itens = document.querySelector("#itens")
-    itens.innerHTML = ""
+function itensCarrinho() {
+    let itens = document.querySelector("#itens");
+    itens.innerHTML = "";
 
-    if(carrinho.length != 0){
+    if (carrinho.length != 0) {
+        const inputs = [];
+
         for (let i = 0; i < carrinho.length; i++) {
-            var produto = carrinho[i];
-            var imagem = document.createElement("img");
-            var txt_produto = document.createElement("p");
-            var div_conteudo = document.createElement("div");
-            var hr = document.createElement("hr");
-            
-            div_conteudo.classList.add("item-container")
-            txt_produto.textContent = produto.nome + " - R$" + produto.preco.toFixed(2);
+            let produto = carrinho[i],
+                imagem = document.createElement("img"),
+                desc_produto = document.createElement("p"),
+                preco_produto = document.createElement("p"),
+                div_item_container = document.createElement("div"),
+                div_infos = document.createElement("div"),
+                hr = document.createElement("hr"),
+                label = document.createElement("label"),
+                input = document.createElement("input");
+
+            div_item_container.classList.add("item-container");
+            div_infos.classList.add("item-info");
+
+            desc_produto.textContent = produto.nome;
+            desc_produto.style.display = "block";
+            desc_produto.style.fontSize = "1rem";
+
+            preco_produto.textContent = "R$" + produto.preco.toFixed(2);
+            preco_produto.style.fontWeight = "bold";
+
             imagem.setAttribute("src", `${"../" + produto.img}`);
             imagem.setAttribute("alt", "Falha ao carregar a imagem");
 
-            itens.appendChild(div_conteudo);
+            label.setAttribute("for", `${"id-" + i}`);
+            label.textContent = "Qtde:";
+            label.style.textAlign = "end";
+            label.style.marginBlockStart = ".5rem";
+
+            input.classList.add("form-control");
+            input.classList.add("input-value");
+            input.setAttribute("id", `${"input-" + i}`);
+            input.setAttribute("type", "number");
+            input.setAttribute("min", "0");
+            input.setAttribute("value", "1");
+            input.setAttribute("placeholder", "Ex: 3");
+
+            inputs.push({ input, quantidade: 1 });
+
+            itens.appendChild(div_item_container);
             itens.appendChild(hr);
-            div_conteudo.appendChild(imagem);
-            div_conteudo.appendChild(txt_produto);
+            div_item_container.appendChild(imagem);
+            div_item_container.appendChild(div_infos);
+            div_infos.appendChild(desc_produto);
+            div_infos.appendChild(preco_produto);
+            div_infos.appendChild(label);
+            div_infos.appendChild(input);
         }
-    } else{
-        itens.innerHTML = "<p style='text-align: center; margin: 0'>Seu carrinho está vazio! 😭</p>"
+
+        const total = document.getElementById("total");
+
+        inputs.forEach((item) => {
+            item.input.addEventListener("input", function () {
+                item.quantidade = parseInt(this.value);
+                calculateTotal();
+            });
+        });
+
+        function calculateTotal() {
+            let sum = 0;
+            inputs.forEach((item) => {
+                const preco_total = item.quantidade * carrinho[inputs.indexOf(item)].preco;
+                sum += preco_total;
+            });
+            total.textContent = "TOTAL: R$" + sum.toFixed(2);
+        }
+
+        calculateTotal();
+
+    } else {
+        itens.innerHTML =
+            "<p style='text-align: center; margin: 0'>Seu carrinho está vazio! 😭</p>";
+
+        total.textContent = ""
     }
 }
 
-// function getPValue() {
-//     let qtde_P = document.querySelector('#qtdePedra');
+var btn_compra = document.getElementById("btn-compra");
 
-//     qtde_P.addEventListener('input', function(){
-//         let valor_P = parseInt(qtde_P.value)
-
-//         return valor_P
-//     })
-// }
-
-
-// cods carrinho.js
-
-// var qtde_A = document.querySelector('#qtdeAreia');
-// qtde_A.addEventListener('input', function(){
-//     let valor = parseInt(qtde_A.value)
-//     return console.log(valor);
-// })
-
-// var qtde_P = document.querySelector('#qtdePedra');
-// qtde_P.addEventListener('input', function(){
-//     let valor = parseInt(qtde_P.value)
-//     return console.log(valor);
-// })
-
-// function addAreia(){
-//     let total = qtde_A.value * areia.preco
-
-//     carrinho.push(total)
-
-//     return console.log(carrinho[carrinho.length - 1])
-// }
-
-// function addPedra(){
-//     let total = qtde_P.value * pedra.preco
-
-//     carrinho.push(total)
-
-//     return console.log(carrinho[carrinho.length - 1])
-// }
+btn_compra.addEventListener("click", function(){
+    alert("Compra finalizada, obrigado por comprar!")
+});

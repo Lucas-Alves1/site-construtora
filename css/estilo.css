@@ -107,11 +107,12 @@ nav a:active{
 header{
     min-width: 100%;
     min-height: 70vh;
-    background-image: url(img/header.jpg);
+    background-image: url(../img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    overflow: hidden;
 }
 
 header .hd-container{
@@ -541,16 +542,11 @@ footer p:hover{
 .item-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: .5rem;
 }
 
 .item-container:not(:last-child){
     margin-bottom: .75rem;
-}
-
-.item-container > p{
-    margin: 0;
-    text-align: end;
 }
 
 .item-container:not(:first-child){
@@ -563,6 +559,26 @@ footer p:hover{
     border-radius: 4px;
 }
 
+.item-info{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-info > p{
+    margin: 0;
+    text-align: end;
+}
+
+.input-value{
+    width: min(100%, 100px);
+    margin-inline-start: auto;
+}
+
+.modal-footer > .total-container{
+    margin-inline-end: auto !important;
+    text-align: start;
+}
 
 /* responsividade ------------------------ */
 
@@ -691,6 +707,19 @@ footer p:hover{
     .div-carrinho{
         right: 15px;
         bottom: 15px;
+    }
+
+    .item-info > p,
+    .item-info > label{
+        font-size: 12px;
+    }
+
+    .input-value{
+        max-height: 1.75rem;
+    }
+
+    .input-value::placeholder{
+        font-size: .75rem;
     }
 }
 
