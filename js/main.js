@@ -89,7 +89,7 @@ function infoCardCimento() {
     document.querySelector("#img-c").src = cimento.img
 }
 
-const carrinho = []
+var carrinho = []
 
 function addAreia() {
     if (!carrinho.includes(areia)) {
@@ -247,7 +247,7 @@ function itensCarrinho() {
             imagem.setAttribute("alt", "Falha ao carregar a imagem");
 
             label.setAttribute("for", `${"id-" + i}`);
-            label.textContent = "Qtde:";
+            label.textContent = "Quantidade:";
             label.style.textAlign = "end";
             label.style.marginBlockStart = ".5rem";
 
@@ -285,6 +285,8 @@ function itensCarrinho() {
             inputs.forEach((item) => {
                 const preco_total = item.quantidade * carrinho[inputs.indexOf(item)].preco;
                 sum += preco_total;
+
+                if ( sum == NaN ) sum -= preco_total;
             });
             total.textContent = "TOTAL: R$" + sum.toFixed(2);
         }
@@ -299,8 +301,11 @@ function itensCarrinho() {
     }
 }
 
-var btn_compra = document.getElementById("btn-compra");
+let btn_compra = document.getElementById("btn-compra");
 
 btn_compra.addEventListener("click", function(){
-    alert("Compra finalizada, obrigado por comprar!")
+    if ( this.click )
+        carrinho = []
+        mostraQtdeCarrinho()
+        alert("Compra finalizada, obrigado por comprar!");
 });
