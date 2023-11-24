@@ -394,29 +394,29 @@ hr{
 
 /* servicos section  */
 
-#servicos{
+#produtos{
     margin: 2rem 0;
     background: #fcf7b9;
     border-radius: 4px;
     padding-top: 2rem;
 }
 
-#servicos .div-titulo,
-#servicos .divider{
+#produtos .div-titulo,
+#produtos .divider{
     margin-left: 2.5rem;
 }
 
-.servicos-descricao{
+.produtos-descricao{
     margin: 0 2.5rem;
     text-align: center;
 }
 
-.servicos-descricao > p{
+.produtos-descricao > p{
     font-size: 1rem;
     color: #333;
 }
 
-.servicos-container{
+.produtos-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2;
@@ -426,16 +426,16 @@ hr{
     padding: 1.5rem 2.5rem;
 }
 
-.servicos-container .card{
+.produtos-container .card{
     max-width: min(400px, 100%);
     overflow: hidden;
 }
 
-.servicos-container .card > img{
+.produtos-container .card > img{
     transition: saturate .3s ease-in-out;
 }
 
-.servicos-container .card:hover img{
+.produtos-container .card:hover img{
     filter: saturate(1.3);
     transition: ease-in-out .3s;
 }
@@ -695,9 +695,9 @@ footer p:hover{
         font-weight: 600;
     }
 
-    /* servicos section */
+    /* produtos section */
 
-    #servicos{
+    #produtos{
         margin-top: 2.75rem;
     }
 
@@ -705,12 +705,12 @@ footer p:hover{
         font-size: 12px;
     }
 
-    .servicos-descricao{
+    .produtos-descricao{
         margin: 0 1.5rem;
         text-align: center;
     }
     
-    .servicos-descricao > p{
+    .produtos-descricao > p{
         font-size: 12px;
         font-weight: bold;
     }
@@ -744,7 +744,7 @@ footer p:hover{
 }
 
 @media only screen and (max-width: 995px) {
-    .servicos-container{
+    .produtos-container{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 3;
     
@@ -759,7 +759,7 @@ footer p:hover{
 }
 
 @media only screen and (max-width: 580px) {
-    .servicos-container{
+    .produtos-container{
         display: flex;
         flex-direction: column;
         padding: 0.75rem;
@@ -767,12 +767,12 @@ footer p:hover{
         margin-right: auto;
     }
 
-    .servicos-container > .card:not(:nth-child(6)){
+    .produtos-container > .card:not(:nth-child(6)){
         margin-bottom: 0.5rem;
     }
 
-    #servicos .div-titulo,
-    #servicos .divider{
+    #produtos .div-titulo,
+    #produtos .divider{
         display: flex;
         margin-left: auto;
         margin-right: auto;
